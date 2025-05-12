@@ -13,7 +13,7 @@ const { token, getDoctorsData} = useContext(AppContext)
 
   const getAppointment = async () => {
     try {
-      const { data } = await axios.get("https://appointment-booking-tbd2.onrender.com/api/user/listOfAppointment",  {headers: {token}})
+      const { data } = await axios.get("https://appointment-booking-ftpv.onrender.com/api/user/listOfAppointment",  {headers: {token}})
       if (data.success) {
        
         setAppointment(data.appointments.reverse())
@@ -31,7 +31,7 @@ const { token, getDoctorsData} = useContext(AppContext)
 
   const cancelAppointment = async (appointmentId) => {
     try {
-      const {data} = await axios.post("https://appointment-booking-tbd2.onrender.com/api/user/cancelAppointment", {appointmentId}, {headers: {token}})
+      const {data} = await axios.post("https://appointment-booking-ftpv.onrender.com/api/user/cancelAppointment", {appointmentId}, {headers: {token}})
       if (data.success) {
         toast.success(data.message)
         getAppointment()
